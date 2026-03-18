@@ -178,15 +178,46 @@ input:focus {
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
 }
 
-.course-name {
-  font-weight: 700;
-  font-size: 0.9rem;
-  margin-bottom: 0.25rem;
+.course-id {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--primary);
+  opacity: 0.8;
+  margin-bottom: 0.2rem;
 }
 
-.course-teacher {
-  font-size: 0.8rem;
+.course-info {
+  font-size: 0.75rem;
   color: var(--text-muted);
+  margin-top: 0.4rem;
+}
+
+.course-status {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.filter-controls {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--glass-border);
+  margin-top: 1.5rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.course-weeks {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(16, 185, 129, 0.1);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 0.25rem;
 }
 
 .course-room {
