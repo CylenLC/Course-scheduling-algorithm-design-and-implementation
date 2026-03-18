@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI 智能排课系统 | 智汇日程</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      /* Embed style.css in index.html to avoid import issues if needed */
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>智能教务排课系统</h1>
+        <p class="subtitle">基于 Google OR-Tools CP-SAT 的数学驱动最优日程规划</p>
+      </header>
+
+      <main class="dashboard">
+        <!-- Configuration Panel -->
+        <aside class="config-panel">
+          <div class="section-title">
+            <span>⚙️</span> 系统配置参数
+          </div>
+
+          <div class="input-group">
+            <label for="course-count">预设课程数量 (Task Count)</label>
+            <input type="number" id="course-count" value="10" min="1" max="100">
+          </div>
+
+          <div class="input-group">
+            <label for="teacher-count">师资团队规模 (Faculty Size)</label>
+            <input type="number" id="teacher-count" value="5" min="1" max="20">
+          </div>
+
+          <div class="input-group">
+            <label for="room-count">可用教室数量 (Resource Capacity)</label>
+            <input type="number" id="room-count" value="3" min="1" max="10">
+          </div>
+
+          <div class="input-group">
+            <label for="days">教学周期 (Working Days)</label>
+            <select id="days">
+              <option value="5" selected>周一至周五 (5天)</option>
+              <option value="6">周一至周六 (6天)</option>
+              <option value="7">全周运行 (7天)</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="periods">每日时段划分 (Periods per Day)</label>
+            <select id="periods">
+              <option value="4" selected>4个时段</option>
+              <option value="6">6个时段</option>
+              <option value="8">8个时段</option>
+            </select>
+          </div>
+
+          <button id="run-btn" class="btn-primary">生成最优课表 (Launch Optimizer)</button>
+          <div id="status-msg" style="margin-top: 1rem; font-size: 0.8rem; color: var(--accent); text-align: center;"></div>
+        </aside>
+
+        <!-- Visualization Panel -->
+        <section class="results-panel">
+          <div class="section-title">
+            <span>📅</span> 调度结果可视化
+          </div>
+
+          <div id="timetable-container" class="timetable-container">
+            <div class="empty-state">
+              <p>📭 暂无数据</p>
+              <p>请点击左侧按钮启动计算引擎</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
